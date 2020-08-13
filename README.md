@@ -1,5 +1,5 @@
 # Workstation
-
+Creates a developer workstation in an existing Domain. Workstation is configured with developer tools such as Visual Studio Code, SSMS, and Azure Data Studio.
 ## Requirements
 1. Existing Subscription
 2. Existing VNet
