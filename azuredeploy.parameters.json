@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "East US"
+  },
+    "VMName":{
+      "value": "Dev-1000"
+    },  
+    "adminusername": {
+      "value": "sysadmin"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/<YOURSUBSCRIPTIONID>/resourceGroups/<YOURRESOURCEGROUP>/providers/Microsoft.KeyVault/vaults/<YOURKEYVAULTNAME>"
+        },
+        "secretName": "DomainAdmin"
+      }
+    },
+    "existingDomainName": {
+      "value": "DemoLab.local"
+    },
+    "domainUsername": {
+      "value": "sysadmin"
+    },
+    "domainUserPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/<YOURSUBSCRIPTIONID>/resourceGroups/<YOURRESOURCEGROUP>/providers/Microsoft.KeyVault/vaults/<YOURKEYVAULTNAME>"
+        },
+        "secretName": "DomainAdmin"
+      }
+    },
+    "existingVirtualNetworkResourceGroup":{
+      "value" :"YOUR_RESOURCEGROUP"
+    },
+    "existingVirtualNetworkName": {
+      "value": "YOUR_VNET_NAME"
+    },
+    "vmSize" :{
+      "value" : "Standard_D2s_v3"
+    },
+    "existingSubnetName": {
+      "value": "YOUR_SUBNET_NAME"
+    },
+    "_artifactsLocation": {
+      "value": "https://<YOUR_STORAGE_ACCOUNT_NAME>.blob.core.windows.net/artifact/" 
+    },
+    "_artifactsLocationSasToken": {
+      "value": ""
+    }
+  }
+}
